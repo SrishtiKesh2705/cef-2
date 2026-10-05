@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 from django.contrib.auth.models import AbstractUser
-from django.db import models
 from .managers import UserManager
 
 class User(AbstractUser):
@@ -17,6 +16,7 @@ class User(AbstractUser):
     college_name=models.CharField(max_length=150)
     email=models.EmailField(unique=True)
     role=models.CharField(
+        
         max_length=10,
         choices=Role.choices
     )
